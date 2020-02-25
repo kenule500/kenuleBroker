@@ -1,0 +1,58 @@
+<div style="margin-top: 2em;">
+ <div>
+  <h3>Update Profile</h3>
+  <form  #f="ngForm" (ngSubmit)=onSubmit(f) *ngIf="!profile">
+    <div fxLayout.xs="column" fxLayoutAlign.gt-xs="row" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout="column" fxFlex="50%">
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="Full Name" ngModel name="fullName" #fullName="ngModel" required>
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="Gender" ngModel name="gender" #gender="ngModel" required>
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input placeholder="State of Origin" matInput ngModel name="state" #gender="ngModel" required>
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="Street" ngModel name="street" #gender="ngModel" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="50%">
+        <mat-form-field style="width: 15em;">
+          <input matInput [matDatepicker]="myDatepicker" ngModel name="birthdate" required #date="ngModel" placeholder="birthdate">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="Country" ngModel name="country" required #country="ngModel">
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input placeholder="Town" matInput ngModel name="town" #town="ngModel" required>
+        </mat-form-field>
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="House No" name="houseNo" ngModel #houseNo="ngModel" required>
+        </mat-form-field>
+      </div>
+    </div>
+   <div style="margin-top: 1em;"><button style="width:100%; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" class="btn btn-outline-primary">Submit Profile Update</button></div>
+  </form>
+  <div  *ngIf="profile" style="padding-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+    <div  fxLayout.xs="column" fxLayoutAlign.gt-xs="row" >
+      <div fxLayout="column" fxFlex="50%">
+        <p>Full Name: <span>{{profile.fullName}}</span></p>
+        <p>Gender: <span>{{profile.gender}}</span></p>
+        <p>State: <span>{{profile.state}}</span></p>
+        <p>Street: <span>{{profile.street}}</span></p>
+      </div>
+      <div fxLayout="column" fxFlex="50%">
+        <p>Birthdate: <span>{{profile.birthdate.toDateString()}}</span></p>
+        <p>Country: <span>{{profile.country}}</span></p>
+        <p>Town: <span>{{profile.town}}</span></p>
+        <p>House No: <span>{{profile.houseNo}}</span></p>
+      </div>
+    </div>
+    <button style="width:100%; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" (click)="profile = null" class="btn btn-outline-primary">Edit</button>
+  </div>
+ </div>
+
+</div>

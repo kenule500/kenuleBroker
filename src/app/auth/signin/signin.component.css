@@ -1,0 +1,26 @@
+mat-form-field, mat-checkbox, button {
+  width: 90%;
+  margin: auto;
+}
+mat-card {
+  height: 30em;
+  margin: 1em;
+}
+button {
+  margin-top: 2em;
+  background-color:rgb(105, 37, 122);
+  color: white;
+  cursor: pointer;
+}
+mat-checkbox {
+  margin-top: 3em;
+}
+form {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 480px) {
+  button {
+    margin-top: 2em;
+  }
+}

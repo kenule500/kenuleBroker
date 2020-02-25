@@ -1,0 +1,30 @@
+<div fxLayout.xs="column" fxLayout="row" style="margin-top: 2em;" fxLayoutGap="1em">
+  <div fxLayout="column" fxFlex="50%" style="margin-bottom: 2em;" fxLayoutGap="2em">
+    <form fxLayout="column" style="padding-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26); margin-bottom: 1em;" (ngSubmit)="onSubmit()" [formGroup]="bankAccount">
+    <h6 style="font-weight: bolder;">Bank Account Update</h6>
+      <mat-form-field style="width: 15em;">
+        <input matInput type="number" placeholder="Bank Account Number" formControlName="accountNumber">
+        <mat-error *ngIf="bankAccount.controls['accountNumber'].hasError('required')">Account Number Required</mat-error>
+        <mat-error *ngIf="!bankAccount.controls['accountNumber'].hasError('required')">Please insert 10 digits</mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 15em;">
+        <input matInput placeholder="Your Country" formControlName="country">
+        <mat-error *ngIf="bankAccount.controls['country'].hasError('required')">Country Required</mat-error>
+      </mat-form-field>
+      <mat-form-field style="width: 15em;">
+        <input matInput placeholder="Your Bank" formControlName="bankName">
+        <mat-error *ngIf="bankAccount.controls['bankName'].hasError('required')">Bank Name Required</mat-error>
+      </mat-form-field>
+      <div ><button type="submit" [disabled]="bankAccount.invalid"  style="width: 100%; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" class="btn btn-outline-primary">Update Bank Account</button></div>
+    </form>
+  </div>
+  <div  fxFlex="50%">
+    <h6 style="font-weight: bolder;">Added Account Details</h6>
+    <div *ngIf="!account" fxLayoutAlign="center"> <p style="margin-top: 4em;">No Bank Account Added Yet</p></div>
+    <div *ngIf="account" style="margin-left: 2em; margin-top: 2em;">
+      <p>Account Number: <span>{{account.accountNumber}}</span></p>
+      <p>Country: <span>{{account.country}}</span></p>
+      <p>Bank Name: <span>{{account.bankName}}</span></p>
+    </div>
+  </div>
+</div>

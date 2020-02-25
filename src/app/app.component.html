@@ -1,0 +1,17 @@
+
+  <mat-sidenav-container fxLayout="column">
+    <mat-sidenav  #sidenav role="navigation">
+      <app-sidenav-list (sidenavToggle)="sidenav.close()" ></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content >
+        <app-header *ngIf="!isAuth"  class="fixed-top"   (sidenavToggle)="sidenav.toggle()" style="margin-bottom:8e;"></app-header>
+        <main   #contentArea>
+          <router-outlet></router-outlet>
+
+        </main>
+      <app-footer *ngIf="!isAuth"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+<!-- txt records: google-site-verification=o3kojZIhlTzVdhWTYQVlkp8hCyKFcAagl3IJDA68H68 -->

@@ -1,0 +1,16 @@
+<mat-card fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="center" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+  <div fxFlex="50%">
+    <p>Get In Touch</p>
+    <h1>Subscribe to Our Newsletter</h1>
+  </div>
+  <div fxFlex="50%">
+    <form (ngSubmit)="sendEmail(f)" #f="ngForm" fxLayout="column">
+      <mat-form-field>
+        <input type="email" placeholder="email" matInput ngModel name="email" email required #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.hasError('required')">email is required</mat-error>
+        <mat-error *ngIf="!emailInput.hasError('required')">invalid email</mat-error>
+      </mat-form-field>
+      <button class="btn" type="submit" color="primary" [disabled]="f.invalid">Submit</button>
+    </form>
+  </div>
+</mat-card>

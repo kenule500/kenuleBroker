@@ -1,0 +1,31 @@
+<div fxLayoutAlign="center"  style="margin-top: 7em;">
+  <mat-card fxFlex.gt-xs="50%" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayoutAlign="center" fxLayout="column">
+        <div fxLayoutAlign="center"><img src="assets/images/large.png" fxFlex="30%"></div>
+        <form fxLayout="column" (ngSubmit)="onSubmit()"  [formGroup]="signupForm">
+          <mat-form-field >
+            <input type="email" placeholder="email" matInput formControlName="email" email  #emailInput>
+            <mat-error *ngIf="signupForm.controls['email'].hasError('required')">email is required</mat-error>
+            <mat-error *ngIf="!signupForm.controls['email'].hasError('required')">invalid email</mat-error>
+          </mat-form-field>
+          <mat-form-field hintLabel="should be at least 6 numbers">
+            <input type="password" placeholder="password" matInput formControlName="pass1"
+            #pwInput1>
+            <mat-error *ngIf="signupForm.controls['pass1'].hasError('required')">Password Required</mat-error>
+            <mat-error *ngIf="signupForm.controls['pass1'].hasError('minlength')">password must be at least 6 character long</mat-error>
+            <mat-hint align="end">{{ pwInput1.value?.length}}/6</mat-hint>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="password" placeholder="Confirm Password" matInput formControlName="pass2"
+            #pwInput2>
+            <mat-error *ngIf="signupForm.controls['pass2'].invalid">passwords does'nt march</mat-error>
+          </mat-form-field>
+           <mat-checkbox formControlName="check" required  color="primary">Agree to our terms and conditions</mat-checkbox>
+          <button  class="btn" type="submit" color="primary" [disabled]="signupForm.invalid">Submit</button>
+        </form>
+
+      </div>
+    </mat-card>
+  </div>
+  <!-- &&  !password" -->
+  <!-- minlength -->

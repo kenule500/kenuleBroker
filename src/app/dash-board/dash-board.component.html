@@ -1,0 +1,164 @@
+<div fxLayout="row"  style="height: 100vh;">
+  <div   fxHide.lt-md fxFlex="1 0 10%"  style="height: 100%; border-bottom-right-radius: 10%; background-color: rgb(197, 182, 182);  color: black; " class="sticky-top">
+    <div style="padding: 2em;">
+      <div fxFlex="60%"><img  style="width: 100%;height: 100%" src="assets/images/large.png"></div>
+    </div>
+   <div style="padding-left: 2em; color: black;" fxLayout="column" fxLayoutGap="1em">
+    <div><a  routerLink="/user/dashboard/main"><i style="color: rgb(155, 39, 48);" class="fa fa-home"></i> Dashboard</a></div>
+    <div><a  routerLink="/user/dashboard/invest"><i style="color: rgb(155, 39, 48);" class="fa fa-money-bill-alt"></i> Invest</a></div>
+    <div><a  routerLink="/user/dashboard/deposit"><i style="color: rgb(155, 39, 48);" class="fa fa-money-bill-wave-alt"></i>  Deposit</a></div>
+    <div><a  routerLink="/user/dashboard/my-deposits"><i style="color: rgb(155, 39, 48);" class="fa fa-home"></i>  My Deposits</a></div>
+    <div><a  routerLink="/user/dashboard/my-withdrawals"><i style="color: rgb(155, 39, 48);" class="fa fa-download"></i> My Withdrawals</a></div>
+    <div><a  routerLink="/user/dashboard/my-investments"><i style="color: rgb(155, 39, 48);" class="fa fa-money-bill-wave-alt"></i> My Investments</a></div>
+    <div><a  routerLink="/user/dashboard/transactions-history"><i style="color: rgb(155, 39, 48);" class="fa fa-cash-register"></i> Transactions History</a></div>
+    <div><a  routerLink="/user/dashboard/general-settings"><i style="color: rgb(155, 39, 48);" class="fa fa-key"></i> General Settings</a></div>
+    <div><a  routerLink="/user/dashboard/account-settings"><i style="color: rgb(155, 39, 48);" class="fa fa-key"></i> Account Settings</a></div>
+   </div>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <!-- <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a> -->
+    <div style="border-bottom-right-radius: 10%;">
+      <div style="padding: 0 2em 2em 2em;">
+        <div fxFlex="60%"><img  style="width: 100%;height: 100%" src="assets/images/large.png"></div>
+      </div>
+     <div style=" color: white;" fxLayout="column" >
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-home" (click)="closeNav()"  routerLink="/user/dashboard/main"><span style="color: black;">  Dashboard</span></a>
+
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-money-bill-alt"  (click)="closeNav()"  routerLink="/user/dashboard/invest"><span style="color: black;"> Invest</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-money-bill-wave-alt"  (click)="closeNav()"  routerLink="/user/dashboard/deposit"><span style="color: black;">  Deposit</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-download"  (click)="closeNav()"  routerLink="/user/dashboard/my-withdrawals"><span style="color: black;"> My Withdrawals</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-money-bill-alt"  (click)="closeNav()"  routerLink="/user/dashboard/my-investments"><span style="color: black;"> My Investments</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-cash-register"  (click)="closeNav()"  routerLink="/user/dashboard/transactions-history"><span style="color: black;"> Transactions History</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-key"  (click)="closeNav()"  routerLink="/user/dashboard/general-settings"><span style="color: black;"> General Settings</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-key"  (click)="closeNav()"  routerLink="/user/dashboard/account-settings"><span style="color: black;"> Account Settings</span></a>
+      <a style="color: rgb(134, 134, 214);"  class="fa fa-eject"  (click)="logout()"><span style="color: black;"> Logout</span></a>
+     </div>
+    </div>
+  </div>
+
+
+  <div  id="feeds" fxFlex="100%" fxFlex.gt-sm="1 7 80%" style="padding:2em .5em 2em .5em; height: 100vh;" >
+    <mat-card fxLayoutAlign="space-between center" fxLayout.xs="row" style="box-shadow: 9px 2px 8px 7px rgba(4, 81, 247, 0.26);">
+      <div fxFlex="90%" fxLayout="row" fxLayoutGap="2em">
+        <div ><h1 style="color: cornflowerblue;" [innerHTML]="user.substring(0,1)"></h1></div >
+        <div fxLayoutAlign="center center" style="padding-top: 1em;"><h6>{{user}}</h6></div>
+      </div>
+     <div fxLayout="column" style="cursor: pointer;" fxFlex="10%" fxHide.xs  (click)="logout()"><mat-icon style="font-size: 3em; color: rgb(134, 134, 214)">eject</mat-icon><p style="margin-top: 1em;">Logout</p> </div>
+     <div  fxFlex="10%"  fxHide.gt-xs> <mat-icon  fxLayoutAlign="end end" (click)="openNav()">menu</mat-icon></div>
+    </mat-card>
+    <div *ngIf="bankNotice" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em;box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Attention needed!</h4>
+          <p>Identity Verification Required</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light">Verify my Identity</button>
+        </div>
+      </div>
+      <div fxFlex="5%" style="position: relative; top: -2em; right: -1.3em;" fxLayoutAlign="end start"><button (click)="notice1 = false" class="btn"><h6 style="font-weight: bolder;  ">X</h6></button></div>
+    </div>
+
+    <div #bank *ngIf="bankNotice" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em;box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Let's know how to pay you</h4>
+          <p>Add your bank account details to be able to withdraw from your account</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light" routerLink="">Add Bank Account</button>
+        </div>
+      </div>
+      <div fxFlex="5%" fxLayoutAlign="end start"><button (click)="bankNotice = false" style=" position: relative; top: -2em; right: -1.3em; " class="btn"><h6 style="font-weight: bolder; ">X</h6></button></div>
+    </div>
+
+    <div *ngIf="profileNotice" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Profile Update urgently required</h4>
+          <p>We'd like to know more about you to have safe deal</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light">Update my Profile</button>
+        </div>
+      </div>
+      <div fxFlex="5%" fxLayoutAlign="end start" style="position: relative; top: -2em; right: -1.3em;"><button (click)="profileNotice = false" class="btn"><h6 style="font-weight: bolder;  ">X</h6></button></div>
+    </div>
+    <div style="margin-top: 2em;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div fxLayout="row"  style="height: auto;">
+  <div fxHide.lt-md fxFlex="1 0 20%"  style="border-bottom-right-radius: 10%; background-color: rgb(197, 182, 182); height: 100vh; color: black; " class="sticky-top">
+    <div style="padding: 2em;">
+      <div fxFlex="60%"><img  style="width: 100%;height: 100%" src="assets/images/large.png"></div>
+    </div>
+   <div style="padding-left: 2em; color: black;" fxLayout="column" fxLayoutGap="1em">
+    <div><a  routerLink="/user/dashboard/main">Dashboard</a></div>
+    <div><a  routerLink="/user/dashboard/invest">Invest</a></div>
+    <div><a  routerLink="/user/dashboard/deposit">Deposit</a></div>
+    <div><a  routerLink="/user/dashboard/my-deposits">My Deposits</a></div>
+    <div><a  routerLink="/user/dashboard/my-withdrawals">My Withdrawals</a></div>
+    <div><a  routerLink="/user/dashboard/my-investments">My Investments</a></div>
+    <div><a  routerLink="/user/dashboard/transactions-history">Transactions History</a></div>
+    <div><a  routerLink="/user/dashboard/general-settings">General Settings</a></div>
+    <div><a  routerLink="/user/dashboard/account-settings">Account Settings</a></div>
+   </div>
+  </div>
+  <div id="feeds" fxFlex="100%" fxFlex.gt-sm="1 7 80%" style="padding:2em .5em 2em .5em; height: auto;" >
+    <mat-card fxLyout.lt-sm="column" fxLayout.gt-xs="row" style="box-shadow: 9px 2px 8px 7px rgba(4, 81, 247, 0.26);">
+      <div fxFlex="80%" fxLayout="row" fxLayoutGap="2em">
+        <div ><h1>S</h1></div >
+        <div fxLayoutAlign="center center" style="padding-top: 1em;"><h6>{{user}}</h6></div>
+      </div>
+     <div style="cursor: pointer;" fxFlex="10%" fxHide.xs  (click)="logout()"><mat-icon style="font-size: 3em; color: rgb(134, 134, 214)">eject</mat-icon></div>
+     <div  fxFlex="10%"> <button fxHide.xs class="btn btn-light" fxFlex="end" (click)="sideNav()">Logout</button></div>
+    </mat-card>
+    <div *ngIf="notice1" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em;box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Attention needed!</h4>
+          <p>Identity Verification Required</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light">Verify my Identity</button>
+        </div>
+      </div>
+      <div fxFlex="5%" style="position: relative; top: -2em; right: -1.3em;" fxLayoutAlign="end start"><button (click)="notice1 = false" class="btn"><h6 style="font-weight: bolder;  ">X</h6></button></div>
+    </div>
+
+    <div *ngIf="!bankAccount" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em;box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Let's know how to pay you</h4>
+          <p>Add your bank account details to be able to withdraw from your account</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light">Add Bank Account</button>
+        </div>
+      </div>
+      <div fxFlex="5%" fxLayoutAlign="end start"><button (click)="bankAccount = !bankAccount" style=" position: relative; top: -2em; right: -1.3em; " class="btn"><h6 style="font-weight: bolder; ">X</h6></button></div>
+    </div>
+
+    <div *ngIf="!profile" fxLayout="row" class="notice" fxLayoutAlign="space-between" style="padding-top: 2em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout.lt-sm="column" fxLayout="row" fxLayoutAlign="space-between"  fxFlex="95%">
+        <div fxLayoutAlign.gt-xs="start"  fxLayoutAlign="center center" fxLayout="column" fxFlex="60%">
+          <h4>Profile Update urgently required</h4>
+          <p>We'd like to know more about you to have safe deal</p>
+        </div>
+        <div  fxLayout="row" fxLayoutAlign.xs="center center" fxLayoutAlign="end center"  fxFlex="40%">
+          <button class="btn btn-light">Update my Profile</button>
+        </div>
+      </div>
+      <div fxFlex="5%" fxLayoutAlign="end start" style="position: relative; top: -2em; right: -1.3em;"><button (click)="profile = !profile" class="btn"><h6 style="font-weight: bolder;  ">X</h6></button></div>
+    </div>
+    <div style="margin-top: 2em;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,12 @@
+<div fxLayoutAlign="center center" fxLayout="column" style="text-align: center; margin-top: 2em;">
+  <h2 style="font-weight: bolder;">Validate BVN</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="bvnForm">
+    <div class="form-group">
+      <label for="usr">Enter a valid BVN:</label>
+      <input matInput type="text" class="form-control"  placeholder="eg. 1234567890" formControlName="bvn" name="bvn">
+      <!-- <mat-error *ngIf="bvnForm.controls['bvn'].hasError('required')">bvn required</mat-error> -->
+    </div>
+    <div style="display: block;"><button [disabled]="bvnForm.invalid" style="width: 100%" class="btn btn-outline-primary">Validate</button></div>
+  </form>
+  <p style="color: red; margin-top: 1em;" *ngIf="notice">NOT AVAILABLE FOR NOW, TRY LATER</p>
+</div>

@@ -1,0 +1,62 @@
+<!-- <div fxLayout.xs="column"    fxLayout.gt-sm="row" fxLayout.sm="column" fxLayoutAlign="space-around">
+  <div class="cardBox"  fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutAlign="space-around">
+    <mat-card   fxLayoutAlign="space-between" fxLayout="column">
+      <div class="fa fa-user"></div>
+      <h5>Sign Up</h5>
+      <p>Register an account and fill in necessary information.</p>
+      <div fxLayoutAlign="start"><button class="btn btn-primary">Create an account</button></div>
+    </mat-card>
+    <mat-card  fxLayoutAlign="space-between" fxLayout="column">
+      <div class="fa fa-user"></div>
+      <h5>Fund Your Wallet</h5>
+      <p>Fund your wallet using your local bank card.</p>
+      <div fxLayoutAlign="start"><button class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+  </div>
+  <div class="cardBox" fxLayout.lt-sm="column"  fxLayout.gt-sm="row" fxLayoutAlign="space-around" >
+    <mat-card  fxLayoutAlign="space-between" fxLayout="column">
+      <div class="fa fa-user"></div>
+      <h5>Invest</h5>
+      <p>Invest Preferred amount from your funded wallet</p>
+      <div fxLayoutAlign="start"><button class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+    <mat-card  fxLayoutAlign="space-between" fxLayout="column">
+      <div class="fa fa-user"></div>
+      <h5>Withdraw Or Rollover</h5>
+      <p>Withdraw accrued ROIs to your bank account.</p>
+      <div fxLayoutAlign="start"><button class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+  </div>
+</div> -->
+
+<div fxLayout.lt-md="column" fxLayout="row"  style="padding: 1em;" fxFlex>
+  <div fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutAlign="space-around" style="padding:0 1em 0 1em;">
+    <mat-card  class="hover"  fxLayout="column" fxLayoutAlign="space-between" style="margin-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" fxFlex.gt-xs="40%">
+      <i style="font-size: 3em; color: rgb(134, 134, 214);" class="fas fa-user-plus"></i>
+      <h5>Sign Up</h5>
+      <p>Register an account and fill in necessary information.</p>
+      <div fxLayoutAlign="start"><button routerLink="/signup" class="btn btn-primary">Create an account</button></div>
+    </mat-card>
+    <mat-card fxLayout="column" fxLayoutAlign="space-between" style="margin-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" fxFlex.gt-xs="40%">
+      <div style="font-size: 3em; color: rgb(134, 134, 214);" class="fa fa-wallet"></div>
+      <h5>Fund Your Wallet</h5>
+      <p>Fund your wallet using your local bank card.</p>
+      <div fxLayoutAlign="start"><button  class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+  </div>
+  <div fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutAlign="space-around" style="padding:0 1em 0 1em;">
+    <mat-card fxLayout="column" fxLayoutAlign="space-between" style="margin-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" fxFlex.gt-xs="40%">
+      <div style="font-size: 3em; color: rgb(134, 134, 214);" class="fas fa-money-bill-alt"></div>
+      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+      <h5>Invest</h5>
+      <p>Invest Preferred amount from your funded wallet</p>
+      <div fxLayoutAlign="start"><button class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+    <mat-card fxLayout="column" fxLayoutAlign="space-between" style="margin-top: 1em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" fxFlex.gt-xs="40%">
+      <div style="font-size: 3em; color: rgb(134, 134, 214);" class="fa fa-download"></div>
+      <h5>Withdraw Or Rollover</h5>
+      <p>Withdraw accrued ROIs to your bank account.</p>
+      <div fxLayoutAlign="start"><button #btn class="btn btn-primary">Learn to use</button></div>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+h5, h3, h6{
+  color:  rgb(92, 130, 165);
+}
+li, p {
+  color:  rgb(60, 60, 87);;
+}
+mat-card {
+  box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);
+}

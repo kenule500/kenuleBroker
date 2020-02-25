@@ -1,0 +1,42 @@
+<mat-card style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+  <h6>Enter Amount to invest</h6>
+  <form style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+    <div fxLayout.xs="column" fxLayout="row" fxLayoutGap="2em">
+      <div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="NGN" type="number">
+          </mat-form-field>
+        </div>
+        <h6>Available Balance:</h6>
+        <h3>NGN 0.00</h3>
+      </div>
+      <div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="$" type="number">
+          </mat-form-field>
+        </div>
+        <h6>Estimated ROI Percentage:</h6>
+        <h3>15%</h3>
+      </div>
+    </div>
+
+    <div>
+      <p>select investment duration</p>
+      <mat-form-field style="width: 15em;">
+        <mat-select placeholder="select investment duration">
+          <mat-option value="1 months">1 month</mat-option>
+          <mat-option value="2 months">2 months</mat-option>
+          <mat-option value="3 months">3 months</mat-option>
+          <mat-option value="4 months">4 months</mat-option>
+          <mat-option value="5 months">5 months</mat-option>
+          <mat-option value="6 months">6 months</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayoutAlign="end" style="padding: 1em;">
+      <button class="btn btn-outline-success">Continue</button>
+    </div>
+  </form>
+</mat-card>

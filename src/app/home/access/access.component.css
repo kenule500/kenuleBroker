@@ -1,0 +1,35 @@
+.img-thumbnail {
+  padding: 0;
+  width: 19em;
+  height: 20em;
+}
+
+.img-thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+.btn {
+  background-color:rgb(105, 37, 122);
+  color: white;
+  margin-top: 4em;
+}
+p {
+  color: rgb(92, 130, 165);
+}
+h1 {
+  font-size: 3em;
+  color: rgb(92, 130, 165);
+}
+
+img {
+  /* width: 15em; */
+  margin-top: 2em;
+}
+
+
+@media screen and (max-width: 660px) {
+  img {
+    width: 15em;
+    margin-top: 2em;
+  }
+}

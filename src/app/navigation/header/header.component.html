@@ -1,0 +1,20 @@
+
+<mat-toolbar fxLayout="row" style="box-shadow: 9px 2px 19px rgba(0, 0, 0, 0.26);" >
+  <div fxFlex="40%"> <div class="img"><img src="assets/images/large.png"></div></div>
+
+  <div fxLayout="row" fxFlex="60%" fxLayoutAlign="end" fxLayoutGap="2em" style="padding-right: 2em; font-size: medium;" fxHide.lt-md>
+
+  <a  routerLink="" routerLinkActive="active">Home</a>
+  <a  routerLink="/about-us" routerLinkActive="active">About Us</a>
+  <a  routerLink="/team" routerLinkActive="active">Team</a>
+  <a  routerLink="/events" routerLinkActive="active">event</a>
+  <a routerLink="/packages" routerLinkActive="active">Packages</a>
+  <a  routerLink="/signin" routerLinkActive="active">Signin</a>
+  <a  routerLink="/signup" routerLinkActive="active">Signup</a>
+</div>
+<div fxLayoutAlign="end" fxFlex fxHide.gt-sm>
+  <div    (click)="toggleSidenav()" style="margin-right: 2em; cursor: pointer;" >
+   <mat-icon style="font-size: 3em; color: rgb(134, 134, 214)"  >menu</mat-icon>
+  </div>
+</div>
+</mat-toolbar>

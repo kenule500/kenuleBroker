@@ -1,0 +1,31 @@
+.img{
+  padding: 0;
+  height: 3em;
+}
+.img img {
+  height: 100%;
+}
+mat-toolbar {
+  height: 3em;
+  margin-bottom: 1em;
+}
+span {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  cursor: pointer;
+  color:  rgb(92, 130, 165);
+  font-size: medium;
+}
+button {
+  cursor: pointer;
+}
+a:active {
+  color: rgb(49, 99, 165);
+}
+a {
+  color:  rgb(92, 130, 165);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+a:hover {
+  text-decoration: none;
+}
+

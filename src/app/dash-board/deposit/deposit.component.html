@@ -1,0 +1,42 @@
+<mat-card>
+  <h6>Enter Prefered Amount</h6>
+  <form style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+    <mat-form-field>
+      <input matInput type="number" placeholder="NGN">
+    </mat-form-field>
+    <h6>Enter Card Details</h6>
+    <p>Your card information are secured with military grade encription</p>
+    <div>
+      <div>
+        <div fxLayoutGap="2em">
+          <mat-form-field>
+            <input matInput type="number" placeholder="Card Number" >
+          </mat-form-field>
+          <mat-form-field>
+            <!-- <input  matInput placeholder="Expiry Date"  type="month"
+            name="date" > -->
+            <input  matInput placeholder="Expiry Date"  [matDatepicker]="picker"
+              name="date" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker startAt="month" #picker></mat-datepicker>
+        </mat-form-field>
+        </div>
+        <mat-form-field>
+          <input matInput placeholder="Card Number Name" >
+        </mat-form-field>
+        <div  fxLayoutGap="2em">
+          <mat-form-field>
+            <input matInput placeholder="CVV" >
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Pin" >
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div fxLayoutAlign="end" style="padding: 1em; ">
+      <button style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" class="btn btn-outline-success">Continue</button>
+    </div>
+  </form>
+
+</mat-card>

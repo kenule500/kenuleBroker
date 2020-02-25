@@ -1,0 +1,84 @@
+<div fxLayout="column">
+  <mat-card fxLayout="row" fxLayout.xs="column" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+    <div fxFlex="50%" style="margin-top: 1em;">
+      <p>Balance</p>
+      <h4>NGN 0.00</h4>
+      <p>0.00</p>
+     <div  fxLayoutAlign="start" fxLayoutGap="2em">
+      <button class="btn btn-primary">Deposit</button>
+      <button class="btn" style="background-color: rgb(185, 171, 171);">Withdraw</button>
+     </div>
+    </div>
+    <div fxFlex="50%" style="margin-top: 1em;">
+      <p>Total Investment</p>
+      <h4>NGN 0.00</h4>
+      <p>0.00</p>
+     <div fxLayoutGap="2em">
+      <button class="btn btn-primary">Invest More</button>
+     </div>
+    </div>
+  </mat-card>
+  <mat-card fxLayout="column" style="height: 10em; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" fxLayoutAlign="space-around" fxLayoutGap=".2em">
+    <div>ROI Forcast</div>
+    <div fxLayoutAlign="center">No ROI Forcast Data Available</div>
+  </mat-card>
+  <mat-card style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+    <div fxLayout="row" fxLayoutAlign="space-between end">
+      <p >Investment</p>
+      <form >
+        <mat-form-field style="width: 7em;">
+          <mat-select>
+            <mat-option value="all">all</mat-option>
+            <mat-option value="byDate">date</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+    <div  fxLayoutAlign="center">
+     <div style="text-align: center;">
+      <h6>You have no Investment</h6>
+      <p style="color: cornflowerblue;">Use reffered account</p>
+     </div>
+    </div>
+  </mat-card>
+  <div fxLayout.xs="column" fxLayout="row" fxLayoutGap="1em">
+    <mat-card fxFlex="50%" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout="row" fxLayoutAlign="space-between end">
+        <p >Transactions</p>
+        <form >
+          <mat-form-field style="width: 7em;">
+            <mat-select>
+              <mat-option value="all">all</mat-option>
+              <mat-option value="byDate">date</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <div  fxLayoutAlign="center">
+        <div style="text-align: center;">
+         <h6>No Transaction to display</h6>
+         <p >Here You will see all the transaction history of your account; <span style="color: cornflowerblue;">Use reffered account</span></p>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card fxFlex="50%" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayout="row" fxLayoutAlign="space-between end">
+        <p >My Deposit</p>
+        <form >
+          <mat-form-field style="width: 7em;">
+            <mat-select>
+              <mat-option value="all">all</mat-option>
+              <mat-option value="byDate">date</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+      </div>
+      <div  fxLayoutAlign="center">
+        <div style="text-align: center;">
+         <h6>No deposit to display</h6>
+         <p >You have no deposit; <span style="color: cornflowerblue;">Use reffered account</span></p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

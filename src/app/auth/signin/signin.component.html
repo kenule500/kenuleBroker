@@ -1,0 +1,30 @@
+<div fxLayoutAlign="center" style="margin-top: 7em;">
+  <mat-card fxFlex.gt-xs="50%" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);">
+      <div fxLayoutAlign="center" fxLayout="column">
+        <div fxLayoutAlign="center"><img src="assets/images/large.png" fxFlex="30%"></div>
+        <form fxLayout="column" fxLayoutGap="5em"  (ngSubmit)="onSubmit()" fxLayoutAlign="space-between"  [formGroup]="signinForm">
+         <div fxLayout="column">
+          <mat-form-field >
+            <input type="email" placeholder="email" matInput  formControlName="email" >
+            <!-- <mat-error *ngIf="emailInput.hasError('required')">email is required</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">invalid email</mat-error> -->
+            <mat-error *ngIf="signinForm.controls['email'].hasError('required')">email is required</mat-error>
+            <mat-error *ngIf="!signinForm.controls['email'].hasError('required')">invalid email</mat-error>
+          </mat-form-field>
+          <mat-form-field hintLabel="should be at least 6 numbers">
+            <input type="password" placeholder="password" matInput  formControlName="password"
+            #pwInput1>
+            <mat-error >password must be at least 6 character long</mat-error>
+            <mat-hint align="end">{{ pwInput1.value?.length}}/6</mat-hint>
+          </mat-form-field>
+         </div>
+          <div fxLayoutAlign="center">
+            <button *ngIf="!isLoading"  class="btn" type="submit" color="primary" [disabled]="signinForm.invalid">Submit</button>
+            <mat-spinner *ngIf="isLoading"></mat-spinner>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+  .
+  <!-- starboy@gds.com -->

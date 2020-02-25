@@ -1,0 +1,59 @@
+<mat-card *ngIf="!isAuth" fxLayout="column"  style="padding-left: 1em; margin: 4em 2em 2em 2em; padding-top: 2em; box-shadow: 9px 2px 8px 9px rgba(0, 0, 0, 0.26);">
+  <div fxLayout.gt-xs="row" fxLayout.lt-md="column">
+    <div fxLayout.gt-xs="row"  fxLayout.lt-sm="column" fxFlex="60%">
+      <div  fxFlex.sm="50%" fxFlex="55%">
+        <div class="thumbnail"><img src="{{logo}}"></div>
+        <p>+2347000002000</p>
+        <p>support@mbaforex.org</p>
+        <p>Suite C201, Plot 1245 Adetokunbo</p>
+        <p>Ademola Crescent,Wuse 2, Abuja, FCT</p>
+      </div>
+      <div  fxFlex.sm="50%" fxFlex="45%">
+        <h4>Company</h4>
+        <div id="lineBox" fxLayoutAlign="none start" class="animated slideInLeft">
+          <div class="line animated slideInLeft" id="line1"></div>
+          <div class="line animated slideInLeft" id="line2"></div>
+          <div class="line animated slideInLeft" id="line3"></div>
+        </div>
+        <p>About Us</p>
+        <p>Meet Our Team</p>
+        <p>Packages</p>
+        <p>Contact Us</p>
+        <p>Mail Us</p>
+      </div>
+    </div>
+    <div fxLayout.gt-xs="row"  fxLayout.lt-sm="column" fxFlex="40%">
+      <div fxFlex="50%">
+        <h4>Help & Support</h4>
+        <div id="lineBox" fxLayoutAlign="none start">
+          <div class="line animated slideInLeft" id="line1"></div>
+          <div class="line animated slideInLeft" id="line2"></div>
+          <div class="line animated slideInLeft" id="line3"></div>
+        </div>
+        <p>FAQS</p>
+        <p>Privacy Policy</p>
+        <p>Terms Of Use</p>
+      </div>
+      <div fxFlex="50%">
+        <h4>Creat An Account</h4>
+        <div id="lineBox" fxLayoutAlign="none start">
+          <div class="line animated slideInLeft" id="line1"></div>
+          <div class="line animated slideInLeft" id="line2"></div>
+          <div class="line animated slideInLeft" id="line3"></div>
+        </div>
+        <p>Login</p>
+        <p>Retrieve Password</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div fxLayout.gt-xs="row" fxLayout.lt-sm="column" style="margin-bottom: 2em;">
+    <p fxFlex="50%">&copy;2019 Kenule Broker Trading and Capital Investment Limited. All Rights Reserved. Developed By Kenule Nwinee</p>
+    <div fxLayoutAlign.xs="start" fxLayoutAlign.gt-xs="end" fxLayoutGap="1em" fxFlex="50%" style="padding-right: 1em;">
+      <img class="ccard" src="https://www.mbatrades.com/assets/images/maestro.png">
+      <img class="ccard" src="https://www.mbatrades.com/assets/images/american-express.png">
+      <img class="ccard" src="https://www.mbatrades.com/assets/images/visa.png">
+      <img class="ccard" src="https://www.mbatrades.com/assets/images/mastercard.png">
+    </div>
+  </div>
+</mat-card>

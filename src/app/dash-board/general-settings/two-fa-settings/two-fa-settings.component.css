@@ -1,0 +1,11 @@
+.num {
+  border-radius: 100%;
+  background-color: royalblue;
+  text-align: center;
+  height: 2em;
+  width: 2em;
+  font-weight: bolder;
+  font-size: 2em;
+  padding-top: 9px;
+  color: white;
+}

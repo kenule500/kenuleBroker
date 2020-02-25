@@ -1,0 +1,52 @@
+<div style="margin-top: 2em; ">
+  <div fxLayout="row" fxLayoutAlign="space-between" >
+    <div fxFlex.xs="60%" style="background-color: #d8d3d3; padding: 1em;" fxFlex="80%">
+      <p style="font-weight: bold;">Enable 2FA</p>
+      <p>For extra-layer of security. Enable Google 2FA authenticator.</p>
+    </div>
+    <div fxFlex.xs="40%" fxFlex="20%" style="padding-left: 1em;">
+      <p style="font-weight: bold;">status</p>
+      <h4 style="color: red;">Inactive</h4>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="1em" style="margin-top: 2em;">
+    <div>
+      <div class="num"><p>1</p></div>
+    </div>
+    <div >
+      <p style="font-weight: bold;">Scan the code below</p>
+      <p>Scan the code below Using your Google Authentication App</p>
+      <div ><img style="height: 10em;width: 10em;" src="assets/images/barcode.png"></div>
+      <p>Or enter the backup key</p>
+      <div class="form-group">
+        <input disabled style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" type="text" class="form-control" value="UDPJW23JFU7CGHS9" style="width: 15em;">
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutGap="1em" style="margin-top: 2em;">
+    <div>
+      <div class="num"><p>2</p></div>
+    </div>
+    <div fxLayout="column">
+      <div >
+        <p style="font-weight: bold;">Enter the password and the code from Google 2FA App</p>
+        <p>To verify your identity, Please provide your password and code from Google 2FA Application</p>
+      </div>
+      <form fxLayout="column" style="box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="Password" type="password" ngModel required #pass="ngModel" name="pass">
+          <mat-error *ngIf="pass.hasError('required')">Password Required</mat-error>
+        </mat-form-field >
+        <mat-form-field style="width: 15em;">
+          <input matInput placeholder="2FA Code" type="text" #code="ngModel" ngModel required name="code">
+          <mat-error *ngIf="code.hasError('required')">Code required</mat-error>
+        </mat-form-field>
+        <button type="submit" style="width: 100%; box-shadow: 9px 2px 8px rgba(0, 0, 0, 0.26);" class="btn btn-outline-primary">Activate 2FA</button>
+      </form>
+      <p style="color: red; margin-top: 1em;" *ngIf="notice">2FA SECURITY NOT AVAILABLE FOR NOW, TRY LATER</p>
+    </div>
+  </div>
+  <div fxLayoutAlign="end" style="margin-top: 1em;">
+
+  </div>
+</div>

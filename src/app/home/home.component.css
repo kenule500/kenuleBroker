@@ -1,0 +1,53 @@
+.btn {
+background-color: rgb(105, 37, 122);
+height: 3em;
+width: 15em;
+color: white;
+}
+img {
+ height: 100%;
+ width: 100%;
+}
+
+.intro {
+  margin-bottom: 2em;
+  padding: 20px 0px 0px 0px
+}
+.intro1 {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.intro2 {
+  padding-top: 2em;
+  overflow: hidden;
+}
+.intro2 div {
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.intro h1 {
+  font-size: 4em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#wallet {
+  margin-bottom: 3em;
+}
+/* #aboutUs { */
+
+#team {
+  margin-top: 4em;
+}
+#price {
+  margin-top: 4em;
+}
+#access {
+  margin-top: 4em;
+}
+#subscribe {
+  padding: 1em;
+  margin-top: 4em;
+}
+#particles-js {
+  background: firebrick;
+}
